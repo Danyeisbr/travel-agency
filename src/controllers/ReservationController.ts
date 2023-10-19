@@ -1,6 +1,5 @@
 // Contains the reservation control logic (handling requests to the server).
-//import axios from "../services/databaseService";
-import axios from "axios";
+import axios from "../services/databaseService";
 import { Reservation } from "../models/ReservationModel";
 
 export const getReservationsController = async (): Promise<Reservation[]> => {

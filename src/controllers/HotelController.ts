@@ -1,7 +1,6 @@
-//Contains the hotel control logic (handling requests to the server).
-//import axios from "../services/databaseService";
+// Contains the hotel control logic (handling requests to the server).
+import axios from "../services/databaseService";
 import { Hotel } from "../models/HotelModel";
-import axios from "axios";
 
 export const getHotelsController = async (): Promise<Hotel[]> => {
   const response = await axios.get("/hotels");
@@ -10,21 +9,21 @@ export const getHotelsController = async (): Promise<Hotel[]> => {
 
 //other filters
 
-// export const getHotelsByCityController = async (city?: string): Promise<Hotel[]> => {
-//   const response = await axios.get<{ hotelCity: string | undefined }, AxiosResponse<Hotel[]> >('/hotels/city', {
-//     const params: Params = {
-//       hotelCity: city,
-//     };
-//   });
+export const getHotelsByCityController = async (city?: string): Promise<Hotel[]> => {
+  const response = await axios.get('/hotels/city', {
+    params: {
+      hotelCity: city,
+    },
+  });
 
-//   if (Array.isArray(response.data)) {
-//     return response.data;
-//   } else {
-//     console.error("Invalid response data format:", response.data);
-//     throw new Error("Invalid response data format");
-//   }
-//   //return response.data;
-// };
+  if (Array.isArray(response.data)) {
+    return response.data;
+  } else {
+    console.error("Invalid response data format:", response.data);
+    throw new Error("Invalid response data format");
+  }
+  //return response.data;
+};
 
 export const getHotelByIdController = async (id: string): Promise<Hotel> => {
   const response = await axios.get("/hotels/" + id);

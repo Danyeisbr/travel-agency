@@ -1,6 +1,4 @@
-// import axios from "../services/databaseService";
-
-import axios from "axios";
+import axios from "../services/databaseService";
 
 export const registerRequest = async (user: any) => axios.post(`/auth/register`, user);
 

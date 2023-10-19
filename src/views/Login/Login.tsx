@@ -11,9 +11,8 @@ interface LoginForm {
 }
 
 const Login: React.FC = () => {
+  //eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [showLogin, setShowLogin] = useState(false);
-
-  console.log(showLogin);
   const history = useHistory();
   const handleCloseLogin = () => {
     setShowLogin(false);
@@ -68,9 +67,7 @@ const Login: React.FC = () => {
                       </label>
                       <input
                         type="email"
-                        className={`form-control ${
-                          errors.email ? "is-invalid" : ""
-                        }`}
+                        className={`form-control ${errors.email ? "is-invalid" : ""}`}
                         placeholder="Write your email"
                         {...register("email", { required: true })}
                       />

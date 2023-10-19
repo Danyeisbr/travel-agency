@@ -21,6 +21,7 @@ interface MainFormProps {
 }
 
 const MainForm: React.FC<MainFormProps> = ({ formData, onSearch }) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [hotels, setHotels] = useState<Hotel[]>([]);
   const [uniqueCities, setUniqueCities] = useState<string[]>([]);
   const [showErrorModal, setShowErrorModal] = useState(false);
@@ -31,8 +32,6 @@ const MainForm: React.FC<MainFormProps> = ({ formData, onSearch }) => {
     checkOutDate: new Date(),
     numGuests: 1,
   });
-  
-  console.log(hotels);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>

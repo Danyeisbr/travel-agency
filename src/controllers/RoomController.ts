@@ -1,7 +1,5 @@
 // Contains the room control logic (handling requests to the server).
-//import axios from "../services/databaseService";
-import axios from "axios";
-
+import axios from "../services/databaseService";
 import { Room } from "../models/RoomModel";
 
 export const getRoomsController = async (): Promise<Room[]> => {

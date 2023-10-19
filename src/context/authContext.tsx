@@ -12,14 +12,6 @@ import {
   verifyTokenRequest,
 } from "../controllers/Auth";
 
-// interface CustomError {
-//   response?: {
-//     data?: {
-//       message?: string;
-//     };
-//   };
-// }
-
 interface AuthProviderProps {
   children: ReactNode; // `children` must be ReactNode type
 }
@@ -77,22 +69,19 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         setUser(res.data);
         setIsAuthenticated(true);
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error during signup:", error);
-      setErrors([
-            "An error occurred during signup. Please try again with another email account.",
-          ]);
-      // if (
-      //   error.response &&
-      //   error.response.data &&
-      //   error.response.data.message
-      // ) {
-      //   setErrors([error.response.data.message]);
-      // } else {
-      //   setErrors([
-      //     "An error occurred during signup. Please try again with another email account.",
-      //   ]);
-      // }
+      if (
+        error.response &&
+        error.response.data &&
+        error.response.data.message
+      ) {
+        setErrors([error.response.data.message]);
+      } else {
+        setErrors([
+          "An error occurred during signup. Please try again with another email account.",
+        ]);
+      }
     }
   };
 

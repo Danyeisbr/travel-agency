@@ -1,5 +1,4 @@
-//import axios from "../services/databaseService";
-import axios from "axios";
+import axios from "../services/databaseService";
 
 interface EmailBody {
   reservationData: {

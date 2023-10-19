@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Reservation } from "../../models/ReservationModel";
 import { createReservationController } from "../../controllers/ReservationController";
-//import { sendEmailController } from "../../controllers/EmailResend";
+import { sendEmailController } from "../../controllers/EmailResend";
 import ModalSuccess from "./ModalSuccess";
 
 interface NewReservationProps {
@@ -95,14 +95,14 @@ const NewReservation: React.FC<NewReservationProps> = ({
       ) {
         setReservationNumber(newReservation.reservationNumber);
         console.log("Sending email...");
-        // const sendEmail = await sendEmailController({
-        //   reservationData: {
-        //     ...newReservation,
-        //     reservationNumber: newReservation.reservationNumber,
-        //   },
-        //   additionalGuestNames,
-        // });
-        //console.log("Email sent...: " + sendEmail);
+        const sendEmail = await sendEmailController({
+          reservationData: {
+            ...newReservation,
+            reservationNumber: newReservation.reservationNumber,
+          },
+          additionalGuestNames,
+        });
+        console.log("Email sent...: " + sendEmail);
         setShowSuccessModal(true);
       }
       //console.log("New Reservation created:", newReservation);

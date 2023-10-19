@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { useAuth } from "../../context/authContext";
 //import Avatar from "../../assets/images/avatar.png";
 import "../../assets/styles/navbar.css";
@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
                     >
                       <div className="d-flex align-items-center">
                         <span>
-                          {/* <FontAwesomeIcon icon={faUser} size="2x" className="mx-2" /> */}
+                          <FontAwesomeIcon icon={faUser} size="2x" className="mx-2" />
                         </span>
                         {/* <img
                           src={Avatar}

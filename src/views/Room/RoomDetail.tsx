@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../../context/authContext";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
 import { Room } from "../../models/RoomModel";
 import NewReservation from "../Reservation/NewReservation";
@@ -86,7 +86,7 @@ export const RoomDetail: React.FC<RoomDetailProps> = ({
                           setShowModal(true);
                         }}
                       >
-                        {/* <FontAwesomeIcon icon={faEdit} className="me-1" /> Edit */}
+                        <FontAwesomeIcon icon={faEdit} className="me-1" /> Edit
                       </button>
                       {showModal && (
                         <UpdateRoom
@@ -104,7 +104,7 @@ export const RoomDetail: React.FC<RoomDetailProps> = ({
                         className="btn btn-danger w-100"
                         onClick={onDelete}
                       >
-                        {/* <FontAwesomeIcon icon={faTrash} className="me-1" />{" "} */}
+                        <FontAwesomeIcon icon={faTrash} className="me-1" />{" "}
                         Delete
                       </button>
                     </div>

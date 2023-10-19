@@ -1,3 +1,4 @@
+//This file is for azure deployment purposes
 const express = require('express');
 const path = require('path');
 const app = express();

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 import { Reservation } from "../../models/ReservationModel";
 import UpdateReservation from "./UpdateReservation";
 
@@ -109,7 +109,7 @@ export const ReservationDetail: React.FC<ReservationDetailProps> = ({
                       setShowModalUpdateReservation(true);
                     }}
                   >
-                    {/* <FontAwesomeIcon icon={faEdit} className="me-1" /> */}
+                    <FontAwesomeIcon icon={faEdit} className="me-1" />
                     Edit
                   </button>
                   {showModalUpdateReservation && (
@@ -127,7 +127,7 @@ export const ReservationDetail: React.FC<ReservationDetailProps> = ({
               <div className="row">
                 <div className="col">
                   <button className="btn btn-danger w-100" onClick={onDelete}>
-                    {/* <FontAwesomeIcon icon={faTrash} className="me-1" /> */}
+                    <FontAwesomeIcon icon={faTrash} className="me-1" />
                     Delete
                   </button>
                 </div>

@@ -13,10 +13,9 @@ interface RegisterForm {
 }
 
 const Register: React.FC = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [showSignup, setShowSignup] = useState(false);
   const history = useHistory();
-
-  console.log(showSignup);
 
   const handleCloseSignup = () => {
     setShowSignup(false);
