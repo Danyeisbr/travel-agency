@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../../context/authContext";
 import { Room } from "../../models/RoomModel";
-import { Hotel } from "../../models/HotelModel";
+//import { Hotel } from "../../models/HotelModel";
 import MainForm from "../Form/MainForm";
 import {
   getRoomsController,
   deleteRoomController,
 } from "../../controllers/RoomController";
-import { getHotelsByCityController } from "../../controllers/HotelController";
+//import { getHotelsByCityController } from "../../controllers/HotelController";
 import { RoomDetail } from "./RoomDetail";
 import NewRoom from "./NewRoom";
 
@@ -24,7 +24,7 @@ const RoomList: React.FC = () => {
   const storedFormData = localStorage.getItem("formData");
   const formData = storedFormData ? JSON.parse(storedFormData) : {};
   const [loading, setLoading] = useState(true);
-  const [hotels, setHotels] = useState<Hotel[]>([]);
+  //const [hotels, setHotels] = useState<Hotel[]>([]);
   const [rooms, setRooms] = useState<Room[]>([]);
   const [showModal, setShowModal] = useState(false);
 
@@ -52,9 +52,9 @@ const RoomList: React.FC = () => {
   const handleSearchHotel = async (formData: FormData) => {
     //Logic to manage the search for hotels by city
     try {
-      const fetchedHotels = await getHotelsByCityController(formData.hotelCity);
-      console.log("Hoteles con el filtro aplicado: " + fetchedHotels);
-      setHotels(fetchedHotels);
+      //const fetchedHotels = await getHotelsByCityController(formData.hotelCity);
+      //console.log("Hoteles con el filtro aplicado: " + fetchedHotels);
+      //setHotels(fetchedHotels);
     } catch (error) {
       console.error("Error fetching hotels:", error);
     }

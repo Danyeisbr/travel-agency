@@ -10,24 +10,21 @@ export const getHotelsController = async (): Promise<Hotel[]> => {
 
 //other filters
 
-export const getHotelsByCityController = async (
-  city?: string
-): Promise<Hotel[]> => {
-  const response = await axios.get("/hotels/city", {
-    params: {
-      hotelCity: city,
-    },
-  });
+// export const getHotelsByCityController = async (city?: string): Promise<Hotel[]> => {
+//   const response = await axios.get<{ hotelCity: string | undefined }, AxiosResponse<Hotel[]> >('/hotels/city', {
+//     const params: Params = {
+//       hotelCity: city,
+//     };
+//   });
 
-  if (Array.isArray(response.data)) {
-    return response.data;
-  } else {
-    console.error("Invalid response data format:", response.data);
-    throw new Error("Invalid response data format");
-  }
-
-  return response.data;
-};
+//   if (Array.isArray(response.data)) {
+//     return response.data;
+//   } else {
+//     console.error("Invalid response data format:", response.data);
+//     throw new Error("Invalid response data format");
+//   }
+//   //return response.data;
+// };
 
 export const getHotelByIdController = async (id: string): Promise<Hotel> => {
   const response = await axios.get("/hotels/" + id);
@@ -56,3 +53,4 @@ export const deleteHotelController = async (
   const response = await axios.delete("/hotels/" + hotelId);
   return response.data;
 };
+

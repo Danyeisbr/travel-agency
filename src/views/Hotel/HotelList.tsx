@@ -3,7 +3,7 @@ import { useAuth } from "../../context/authContext";
 import { Hotel } from "../../models/HotelModel";
 import MainForm from "../Form/MainForm";
 import {
-  getHotelsByCityController,
+  //getHotelsByCityController,
   getHotelsController,
   deleteHotelController,
 } from "../../controllers/HotelController";
@@ -52,8 +52,8 @@ const HotelList: React.FC = () => {
   const handleSearchHotel = async (formData: FormData) => {
     // Logic to manage the search for hotels by city
     try {
-      const fetchedHotels = await getHotelsByCityController(formData.hotelCity);
-      setHotels(fetchedHotels);
+      // const fetchedHotels = await getHotelsByCityController(formData.hotelCity);
+      // setHotels(fetchedHotels);
     } catch (error) {
       console.error("Error fetching hotels:", error);
     }
