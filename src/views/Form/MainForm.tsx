@@ -31,6 +31,8 @@ const MainForm: React.FC<MainFormProps> = ({ formData, onSearch }) => {
     checkOutDate: new Date(),
     numGuests: 1,
   });
+  
+  console.log(hotels);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -88,19 +90,19 @@ const MainForm: React.FC<MainFormProps> = ({ formData, onSearch }) => {
   };
 
   useEffect(() => {
-    // const fetchHotels = async () => {
-    //   try {
-    //     const response = await getHotelsController();
-    //     setHotels(response); // Store hotel data in the local state
-    //     // Extract unique cities from hotels using a Set
-    //     const citiesSet = new Set(response.map((hotel) => hotel.hotelCity));
-    //     // Convert the Set to an array to render the selector options
-    //     setUniqueCities(Array.from(citiesSet));
-    //   } catch (error) {
-    //     console.log("Error fetching hotels:", error);
-    //   }
-    // };
-    // fetchHotels();
+    const fetchHotels = async () => {
+      try {
+        const response = await getHotelsController();
+        setHotels(response); // Store hotel data in the local state
+        // Extract unique cities from hotels using a Set
+        const citiesSet = new Set(response.map((hotel) => hotel.hotelCity));
+        // Convert the Set to an array to render the selector options
+        setUniqueCities(Array.from(citiesSet));
+      } catch (error) {
+        console.log("Error fetching hotels:", error);
+      }
+    };
+    fetchHotels();
   }, []);
 
   useEffect(() => {

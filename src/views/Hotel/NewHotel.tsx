@@ -83,7 +83,7 @@ const NewHotel: React.FC<NewHotelProps> = ({
 
     fetchRooms(); // Llama a la función para obtener los cuartos cuando el componente se monta
     console.log("Hotel Data:", hotelData);
-  }, []);
+  }, [hotelData]);
 
   return (
     <>

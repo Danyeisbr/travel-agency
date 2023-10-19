@@ -29,6 +29,8 @@ const Home: React.FC = () => {
 
   const [formData, setFormData] = useState<FormData>(initialFormData);
 
+  console.log(setFormData);
+
   const handleSearchHotel = (formData: FormData) => {
     // Convert numGuests to number before storing it in localStorage
     const formDataToStore = {

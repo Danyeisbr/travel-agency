@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-//import { useAuth } from "../../context/authContext";
+import { useAuth } from "../../context/authContext";
 import { useHistory, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { registerSchema } from "../../schemas/auth";
-//import { zodResolver } from "@hookform/resolvers/zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 interface RegisterForm {
   username: string;
@@ -16,27 +16,29 @@ const Register: React.FC = () => {
   const [showSignup, setShowSignup] = useState(false);
   const history = useHistory();
 
+  console.log(showSignup);
+
   const handleCloseSignup = () => {
     setShowSignup(false);
     history.push("/");
   };
 
-  // const { signup, errors: registerErrors, isAuthenticated } = useAuth();
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   formState: { errors },
-  // } = useForm<RegisterForm>({
-  //   resolver: zodResolver(registerSchema),
-  // });
+  const { signup, errors: registerErrors, isAuthenticated } = useAuth();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<RegisterForm>({
+    resolver: zodResolver(registerSchema),
+  });
 
-  // const onSubmit: (data: RegisterForm) => Promise<void> = async (data) => {
-  //   await signup(data);
-  // };
+  const onSubmit: (data: RegisterForm) => Promise<void> = async (data) => {
+    await signup(data);
+  };
 
-  // useEffect(() => {
-  //   if (isAuthenticated) history.push("/hotels");
-  // }, [isAuthenticated, history]);
+  useEffect(() => {
+    if (isAuthenticated) history.push("/hotels");
+  }, [isAuthenticated, history]);
 
   return (
     <>
@@ -56,32 +58,31 @@ const Register: React.FC = () => {
                   ></button>
                 </div>
                 <div className="modal-body">
-                  {/* {registerErrors.map((error, i) => (
+                  {registerErrors.map((error, i) => (
                     <p className="text-danger" key={i}>
                       {error}
                     </p>
-                  ))} */}
+                  ))}
 
-                  <form className="p-4" //</div>onSubmit={handleSubmit(onSubmit)}
-                  >
+                  <form className="p-4" onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-group mb-3">
                       <label htmlFor="username" className="py-2">
                         Username:
                       </label>
                       <input
                         type="text"
-                        // className={`form-control ${
-                        //   errors.username ? "is-invalid" : ""
-                        // }`}
-                        // placeholder="Write your name"
-                        // {...register("username")}
+                        className={`form-control ${
+                          errors.username ? "is-invalid" : ""
+                        }`}
+                        placeholder="Write your name"
+                        {...register("username")}
                         autoFocus
                       />
-                      {/* {errors.username?.message && (
+                      {errors.username?.message && (
                         <div className="invalid-feedback">
                           {errors.username.message}
                         </div>
-                      )} */}
+                      )}
                     </div>
                     <div className="form-group mb-3">
                       <label htmlFor="email" className="py-2">
@@ -89,17 +90,17 @@ const Register: React.FC = () => {
                       </label>
                       <input
                         type="email"
-                        // className={`form-control ${
-                        //   errors.email ? "is-invalid" : ""
-                        // }`}
-                        // placeholder="Write your email"
-                        // {...register("email")}
+                        className={`form-control ${
+                          errors.email ? "is-invalid" : ""
+                        }`}
+                        placeholder="Write your email"
+                        {...register("email")}
                       />
-                      {/* {errors.email?.message && (
+                      {errors.email?.message && (
                         <div className="invalid-feedback">
                           {errors.email.message}
                         </div>
-                      )} */}
+                      )}
                     </div>
                     <div className="form group mb-3">
                       <label htmlFor="password" className="py-2">
@@ -107,17 +108,17 @@ const Register: React.FC = () => {
                       </label>
                       <input
                         type="password"
-                        // className={`form-control ${
-                        //   errors.password ? "is-invalid" : ""
-                        // }`}
-                        // placeholder="********"
-                        // {...register("password")}
+                        className={`form-control ${
+                          errors.password ? "is-invalid" : ""
+                        }`}
+                        placeholder="********"
+                        {...register("password")}
                       />
-                      {/* {errors.password?.message && (
+                      {errors.password?.message && (
                         <div className="invalid-feedback">
                           {errors.password.message}
                         </div>
-                      )} */}
+                      )}
                     </div>
                     <div className="form group mb-3">
                       <label htmlFor="confirmPassword" className="py-2">
@@ -125,17 +126,17 @@ const Register: React.FC = () => {
                       </label>
                       <input
                         type="password"
-                        // className={`form-control ${
-                        //   errors.confirmPassword ? "is-invalid" : ""
-                        // }`}
-                        // placeholder="********"
-                        // {...register("confirmPassword")}
+                        className={`form-control ${
+                          errors.confirmPassword ? "is-invalid" : ""
+                        }`}
+                        placeholder="********"
+                        {...register("confirmPassword")}
                       />
-                      {/* {errors.confirmPassword?.message && (
+                      {errors.confirmPassword?.message && (
                         <div className="invalid-feedback">
                           {errors.confirmPassword.message}
                         </div>
-                      )} */}
+                      )}
                     </div>
 
                     <div className="form group mb-3">

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useAuth } from "../../context/authContext";
 import { SubmitHandler, useForm } from "react-hook-form";
-//import { zodResolver } from "@hookform/resolvers/zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema } from "../../schemas/auth";
 
 interface LoginForm {
@@ -12,6 +12,8 @@ interface LoginForm {
 
 const Login: React.FC = () => {
   const [showLogin, setShowLogin] = useState(false);
+
+  console.log(showLogin);
   const history = useHistory();
   const handleCloseLogin = () => {
     setShowLogin(false);
@@ -23,8 +25,7 @@ const Login: React.FC = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<LoginForm>({
-    //resolver: zodResolver(loginSchema),
-
+    resolver: zodResolver(loginSchema),
   });
   const { signin, errors: loginErrors, isAuthenticated } = useAuth();
   const onSubmit: SubmitHandler<LoginForm> = (data) => {
@@ -67,7 +68,9 @@ const Login: React.FC = () => {
                       </label>
                       <input
                         type="email"
-                        className={`form-control ${errors.email ? "is-invalid" : ""}`}
+                        className={`form-control ${
+                          errors.email ? "is-invalid" : ""
+                        }`}
                         placeholder="Write your email"
                         {...register("email", { required: true })}
                       />

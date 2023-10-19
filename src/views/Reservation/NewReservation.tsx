@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Reservation } from "../../models/ReservationModel";
 import { createReservationController } from "../../controllers/ReservationController";
-import { sendEmailController } from "../../controllers/EmailResend";
+//import { sendEmailController } from "../../controllers/EmailResend";
 import ModalSuccess from "./ModalSuccess";
 
 interface NewReservationProps {
