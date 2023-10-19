@@ -43,7 +43,7 @@
     "client": "react-scripts start",
     "start": "node server.js",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --passWithNoTests",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
