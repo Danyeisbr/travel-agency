@@ -21,6 +21,11 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
-, "server.js"  ]
+    "server.js",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "public/**/*.d.ts",
+    "node_modules/react-hook-form"
+  ],
 }
