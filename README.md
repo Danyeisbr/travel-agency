@@ -2,45 +2,91 @@
 
 Welcome to the Travel Agency Management System, a sophisticated web application designed to revolutionize the way you manage hotel accommodations. Our application offers seamless user experiences for both travelers and travel agents, ensuring efficient booking processes and comprehensive management capabilities.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+## For Travelers:
 
-### `npm start`
+### 1. User-Friendly Hotel Search:
+Easily find available hotels based on entry and exit dates, the number of guests, and desired city location.
+### 2. Flexible Room Selection:
+Choose from a variety of rooms in different hotels. Once selected, enter guest details and make reservations hassle-free.
+### 3. Email Notifications:
+Receive instant email notifications confirming your reservation details, ensuring you're always informed about your upcoming stay.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## For Travel Agents:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 1. Secure Agent Login:
+Access your travel agent dashboard securely with validation and authentication procedures.
+### 2. Hotel Management:
+Create new hotels and maintain a curated list of preferred hotels.
+### 3. Room Allocation:
+Assign available rooms in each hotel for reservation, setting custom room prices, taxes, and room types.
+### 4. Hotel Customization:
+Modify hotel information, including details about amenities, location, and contact information.
+### 5. Enable/Disable Functionality:
+Have the flexibility to enable or disable both hotels and individual rooms as per availability.
+### 6. Reservation Tracking:
+View a comprehensive list of all reservations made across your hotels.
+### 7.Guest Information:
+Collect detailed guest information, including names, birthdates, gender, document types, document numbers, emails, and phone numbers.
+### 8. Emergency Contact Association:
+Link each reservation with emergency contact details, ensuring safety and security during the stay.
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Front End:
 
-### `npm run build`
+### React
+A powerful JavaScript library for building responsive user interfaces.
+### TypeScript
+A statically typed superset of JavaScript for enhanced code quality and reliability.
+### Bootstrap
+A sleek and intuitive CSS framework for creating modern and visually appealing designs.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Backend:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Express
+A fast, unopinionated, minimalist web framework for Node.js, providing robust backend support.
+### Node.js
+A JavaScript runtime built on Chrome's V8 JavaScript engine, enabling server-side scripting for dynamic web applications.
+### MongoDB
+A cloud-based NoSQL database service, ensuring seamless data storage and retrieval.
+### Mongoose
+An elegant MongoDB object modeling tool, simplifying interactions with MongoDB databases.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Deployment:
 
-### `npm run eject`
+### GitHub
+A version control platform for collaborative software development, ensuring efficient code management and collaboration.
+### Microsoft Azure Cloud
+Leveraging Azure services for continuous integration and deployment, guaranteeing a smooth development and deployment pipeline.
+### MongoDB Atlas
+MongoDB cloud services consist of a comprehensive suite of data products that accelerate and simplify how you build with data for any application. With Atlas Database (the Database-as-a-Service for MongoDB), Search, and Data Federation, you can serve any class of workload through a common API. Additionally, bidirectional sync between Atlas and Realm allows you to extend your cloud backend to the edge and mobile devices.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Folder Structure
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Ensure a well-organized project structure following the Model-View-Controller (MVC) pattern, promoting code readability and maintainability.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## How to Use:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Clone the Repository
+Clone this repository to your local machine using the following command:
 
-## Learn More
+### git clone <repository-url>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Install Dependencies
+Navigate to the project directory and install the necessary dependencies using:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### npm install
+
+### Run the Application:
+Start the development server using:
+
+### npm run client 
+### npm run server
+
+Access the application at http://localhost:3000 in your web browser.
+Experience the future of hotel management with our Travel Agency Management System. Streamline your booking processes, enhance customer experiences, and elevate your travel agency's efficiency. For further inquiries or assistance, please contact me at danyeistj@hotmail.com
+
+Thank you for choosing our Travel Agency Management System!
+
