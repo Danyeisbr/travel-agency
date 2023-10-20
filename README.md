@@ -90,3 +90,5 @@ Experience the future of hotel management with our Travel Agency Management Syst
 
 Thank you for choosing our Travel Agency Management System!
 
+![Home](src/assets/images/home.png)
+
