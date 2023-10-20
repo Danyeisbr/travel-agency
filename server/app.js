@@ -12,7 +12,7 @@ const app = express();
 
 //app.use(cors());
 app.use(cors({
-    origin: process.env.ORIGIN,
+    origin: "https://travel-app.azurewebsites.net",
     credentials: true, 
   }));
 app.use(morgan("dev"));
