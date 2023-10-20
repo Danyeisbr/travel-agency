@@ -69,14 +69,18 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         setUser(res.data);
         setIsAuthenticated(true);
       }
-    } catch (error: any) {
+    } catch (error) {
       console.error("Error during signup:", error);
       if (
-        error.response &&
-        error.response.data &&
-        error.response.data.message
+        (error as { response: { data: { message: string } } }).response &&
+        (error as { response: { data: { message: string } } }).response.data &&
+        (error as { response: { data: { message: string } } }).response.data
+          .message
       ) {
-        setErrors([error.response.data.message]);
+        setErrors([
+          (error as { response: { data: { message: string } } }).response.data
+            .message,
+        ]);
       } else {
         setErrors([
           "An error occurred during signup. Please try again with another email account.",

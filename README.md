@@ -80,7 +80,7 @@ Navigate to the project directory and install the necessary dependencies using:
 ### npm install
 
 ### Run the Application:
-Start the development server using:
+Start the front end development using client and server for backend:
 
 ### npm run client 
 ### npm run server
