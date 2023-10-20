@@ -7,7 +7,7 @@ import {
   getRoomsController,
   deleteRoomController,
 } from "../../controllers/RoomController";
-import { getHotelsByCityController } from "../../controllers/HotelController";
+import { getHotelsByCityController } from "../../controllers/HotelsByCity";
 import { RoomDetail } from "./RoomDetail";
 import NewRoom from "./NewRoom";
 
@@ -54,7 +54,7 @@ const RoomList: React.FC = () => {
     //Logic to manage the search for hotels by city
     try {
       const fetchedHotels = await getHotelsByCityController(formData.hotelCity);
-      console.log("Hoteles con el filtro aplicado: " + fetchedHotels);
+      console.log("Filter hotels by city: " + fetchedHotels);
       setHotels(fetchedHotels);
     } catch (error) {
       console.error("Error fetching hotels:", error);

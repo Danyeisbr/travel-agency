@@ -3,10 +3,10 @@ import { useAuth } from "../../context/authContext";
 import { Hotel } from "../../models/HotelModel";
 import MainForm from "../Form/MainForm";
 import {
-  getHotelsByCityController,
   getHotelsController,
   deleteHotelController,
 } from "../../controllers/HotelController";
+import {getHotelsByCityController} from "../../controllers/HotelsByCity";
 import { HotelDetail } from "./HotelDetail";
 import NewHotel from "./NewHotel";
 import "../../assets/styles/hotel-list.css";
