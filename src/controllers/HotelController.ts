@@ -1,4 +1,5 @@
 // Contains the hotel control logic (handling requests to the server).
+import { AxiosRequestConfig, AxiosResponse } from "axios";
 import axios from "../services/databaseService";
 import { Hotel } from "../models/HotelModel";
 
@@ -10,20 +11,43 @@ export const getHotelsController = async (): Promise<Hotel[]> => {
 //other filters
 
 export const getHotelsByCityController = async (city?: string): Promise<Hotel[]> => {
-  const response = await axios.get('/hotels/city', {
-    params: {
-      hotelCity: city,
-    },
-  });
+  try {
+    const params: any = { hotelCity: city || '' };
 
-  if (Array.isArray(response.data)) {
-    return response.data;
-  } else {
-    console.error("Invalid response data format:", response.data);
-    throw new Error("Invalid response data format");
+    const config: AxiosRequestConfig = {
+      params,
+    };
+
+    const response: AxiosResponse<Hotel[]> = await axios.get('/hotels/city', config);
+
+    if (Array.isArray(response.data)) {
+      return response.data;
+    } else {
+      console.error("Invalid response data format:", response.data);
+      throw new Error("Invalid response data format");
+    }
+  } catch (error) {
+    console.error("Error getting hotels by city:", error);
+    throw error; 
   }
-  //return response.data;
 };
+
+
+// export const getHotelsByCityController = async (city?: string): Promise<Hotel[]> => {
+//   const response = await axios.get('/hotels/city', {
+//     params: {
+//       hotelCity: city,
+//     },
+//   });
+
+//   if (Array.isArray(response.data)) {
+//     return response.data;
+//   } else {
+//     console.error("Invalid response data format:", response.data);
+//     throw new Error("Invalid response data format");
+//   }
+//   //return response.data;
+// };
 
 export const getHotelByIdController = async (id: string): Promise<Hotel> => {
   const response = await axios.get("/hotels/" + id);
