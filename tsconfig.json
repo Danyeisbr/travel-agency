@@ -23,5 +23,5 @@
     "src/**/*.tsx",
     "public/**/*.d.ts",
     "node_modules/react-hook-form"
-  ]
+, "src/services/databaseService.js"  ]
 }
