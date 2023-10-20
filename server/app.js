@@ -25,4 +25,9 @@ app.use("/api", roomRoutes);
 app.use("/api", reservationRoutes);
 app.use("/api", resendEmail);
 
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+  });
+
 export default app;
