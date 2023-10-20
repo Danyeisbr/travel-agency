@@ -10,7 +10,11 @@ import authRoutes from "./routes/authRoutes.js";
 
 const app = express();
 
-app.use(cors());
+//app.use(cors());
+app.use(cors({
+    origin: "https://travel-app.azurewebsites.net",
+    credentials: true, 
+  }));
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(cookieParser());
